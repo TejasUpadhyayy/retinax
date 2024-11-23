@@ -1,0 +1,85 @@
+<!-- templates/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>About DR and DME</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">DR and DME Prediction</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Predict</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/treatment' %}active{% endif %}" href="/treatment">Treatment Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="container mt-5 mb-5">
+        <h1 class="mb-4">Understanding Diabetic Retinopathy (DR) and Diabetic Macular Edema (DME)</h1>
+        <p>
+            <strong>Diabetic Retinopathy (DR)</strong> is a diabetes complication that affects eyes.
+            It's caused by damage to the blood vessels of the light-sensitive tissue at the back of the eye (retina).
+        </p>
+        <img src="{{ url_for('static', filename='images/dr_example.jpg') }}" class="img-fluid my-4" alt="Example of Diabetic Retinopathy">
+        <h3>Stages of Diabetic Retinopathy:</h3>
+        <ul>
+            <li><strong>No DR:</strong> No signs of retinopathy.</li>
+            <li><strong>Mild:</strong> Small areas of balloon-like swelling in the retina's blood vessels.</li>
+            <li><strong>Moderate:</strong> Blood vessels that nourish the retina are blocked.</li>
+            <li><strong>Severe:</strong> More blood vessels are blocked, depriving several areas of the retina of blood supply.</li>
+            <li><strong>Proliferative DR:</strong> The most advanced stage, new blood vessels grow, which are abnormal and fragile.</li>
+        </ul>
+        <p>
+            <strong>Diabetic Macular Edema (DME)</strong> is a buildup of fluid in the macula, an area in the center of the retina.
+            The fluid makes the macula swell, leading to blurred vision.
+        </p>
+        <img src="{{ url_for('static', filename='images/dme_example.jpg') }}" class="img-fluid my-4" alt="Example of Diabetic Macular Edema">
+        <h3>Importance of Early Detection:</h3>
+        <p>
+            Early detection and treatment can reduce the risk of vision loss.
+            Regular eye exams and timely intervention are crucial for individuals with diabetes.
+        </p>
+        <h3>Treatment Options:</h3>
+        <ul>
+            <li>Laser treatment</li>
+            <li>Medications injected into the eye</li>
+            <li>Vitrectomy surgery</li>
+        </ul>
+        <p>
+            Consult an eye care professional for personalized advice and treatment plans.
+        </p>
+    </div>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
